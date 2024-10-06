@@ -1,0 +1,1247 @@
+<!DOCTYPE html>
+<html data-bs-theme="dark" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+    />
+    <title>Kevin Tamme - Softwareentwickler &amp; Webdesigner</title>
+    <link rel="canonical" href="https://kevintamme.com/" />
+    <meta property="og:url" content="https://kevintamme.com/" />
+    <meta name="author" content="Kevin Tamme" />
+    <meta
+      name="keywords"
+      content="Webdesign, Softwareentwicklung, Portfolio, digitale Lösungen, maßgeschneiderte Software, UX/UI Design, Kundenprojekte"
+    />
+    <meta
+      name="title"
+      content="Kevin Tamme - Digitale Designs für reale Visionen."
+    />
+    <meta
+      name="description"
+      content="Entdecken Sie mein Portfolio, das eine Auswahl meiner besten Web- und Softwareprojekte präsentiert. Ich biete maßgeschneiderte Lösungen für Unternehmen, die ihre digitale Präsenz optimieren möchten. Mit einem Fokus auf Benutzererfahrung, modernes Design und technische Exzellenz unterstütze ich meine Kunden dabei, ihre Visionen in die Realität umzusetzen. Lassen Sie sich von meinen bisherigen Arbeiten inspirieren und erfahren Sie, wie ich auch Ihr Projekt zum Erfolg führen kann."
+    />
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "WebSite",
+        "name": "Kevin Tamme - Digitale Designs für reale Visionen.",
+        "url": "https://kevintamme.com/"
+      }
+    </script>
+    <script>
+      (function () {
+        // JavaScript snippet handling Dark/Light mode switching
+
+        const getStoredTheme = () => localStorage.getItem("theme");
+        const setStoredTheme = (theme) => localStorage.setItem("theme", theme);
+        const forcedTheme = document.documentElement.getAttribute(
+          "data-bss-forced-theme"
+        );
+
+        const getPreferredTheme = () => {
+          if (forcedTheme) return forcedTheme;
+
+          const storedTheme = getStoredTheme();
+          if (storedTheme) {
+            return storedTheme;
+          }
+
+          const pageTheme =
+            document.documentElement.getAttribute("data-bs-theme");
+
+          if (pageTheme) {
+            return pageTheme;
+          }
+
+          return window.matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light";
+        };
+
+        const setTheme = (theme) => {
+          if (
+            theme === "auto" &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches
+          ) {
+            document.documentElement.setAttribute("data-bs-theme", "dark");
+          } else {
+            document.documentElement.setAttribute("data-bs-theme", theme);
+          }
+        };
+
+        setTheme(getPreferredTheme());
+
+        const showActiveTheme = (theme, focus = false) => {
+          const themeSwitchers = [].slice.call(
+            document.querySelectorAll(".theme-switcher")
+          );
+
+          if (!themeSwitchers.length) return;
+
+          document
+            .querySelectorAll("[data-bs-theme-value]")
+            .forEach((element) => {
+              element.classList.remove("active");
+              element.setAttribute("aria-pressed", "false");
+            });
+
+          for (const themeSwitcher of themeSwitchers) {
+            const btnToActivate = themeSwitcher.querySelector(
+              '[data-bs-theme-value="' + theme + '"]'
+            );
+
+            if (btnToActivate) {
+              btnToActivate.classList.add("active");
+              btnToActivate.setAttribute("aria-pressed", "true");
+            }
+          }
+        };
+
+        window
+          .matchMedia("(prefers-color-scheme: dark)")
+          .addEventListener("change", () => {
+            const storedTheme = getStoredTheme();
+            if (storedTheme !== "light" && storedTheme !== "dark") {
+              setTheme(getPreferredTheme());
+            }
+          });
+
+        window.addEventListener("DOMContentLoaded", () => {
+          showActiveTheme(getPreferredTheme());
+
+          document
+            .querySelectorAll("[data-bs-theme-value]")
+            .forEach((toggle) => {
+              toggle.addEventListener("click", (e) => {
+                e.preventDefault();
+                const theme = toggle.getAttribute("data-bs-theme-value");
+                setStoredTheme(theme);
+                setTheme(theme);
+                showActiveTheme(theme);
+              });
+            });
+        });
+      })();
+    </script>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="500x500"
+      href="assets/img/favicons/kt-light.webp"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="500x500"
+      href="assets/img/favicons/kt-dark.webp"
+      media="(prefers-color-scheme: dark)"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="500x500"
+      href="assets/img/favicons/kt-light.webp"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="500x500"
+      href="assets/img/favicons/kt-dark.webp"
+      media="(prefers-color-scheme: dark)"
+    />
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Raleway:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;display=swap"
+    />
+    <link rel="stylesheet" href="assets/css/bs-theme-overrides.css" />
+    <link rel="stylesheet" href="assets/css/aos.min.css" />
+    <link rel="stylesheet" href="assets/css/animate.min.css" />
+  </head>
+
+  <body>
+    <nav
+      class="navbar navbar-expand-md fixed-top navbar-shrink py-3"
+      id="mainNav"
+    >
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="/"
+          ><span>Kevin Tamme</span></a
+        ><button
+          data-bs-toggle="collapse"
+          class="navbar-toggler"
+          data-bs-target="#navcol-1"
+        >
+          <span class="visually-hidden">Toggle navigation</span
+          ><span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navcol-1">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="index.html">Überblick</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="portfolio.html">Portfolio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contacts.html">Kontakt</a>
+            </li>
+          </ul>
+          <a
+            class="btn btn-primary shadow"
+            role="button"
+            data-bss-hover-animate="pulse"
+            href="contacts.html"
+            >Jetzt anfragen</a
+          >
+        </div>
+      </div>
+    </nav>
+    <header class="pt-5">
+      <div class="container pt-4 pt-xl-5">
+        <div class="row pt-5">
+          <div class="col-md-8 text-center text-md-start mx-auto">
+            <div class="text-center">
+              <div class="theme-switcher dropdown">
+                <button
+                  class="btn btn-link dropdown-toggle"
+                  aria-expanded="false"
+                  data-bs-toggle="dropdown"
+                  type="button"
+                  style="color: var(--bs-body-color)"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="1em"
+                    height="1em"
+                    fill="currentColor"
+                    viewBox="0 0 16 16"
+                    class="bi bi-sun-fill mb-1"
+                  >
+                    <path
+                      d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8M8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0m0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13m8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5M3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8m10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0m-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707M4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"
+                    ></path>
+                  </svg>
+                </button>
+                <div class="dropdown-menu">
+                  <a
+                    class="dropdown-item d-flex align-items-center"
+                    href="#"
+                    data-bs-theme-value="light"
+                    ><svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="1em"
+                      height="1em"
+                      fill="currentColor"
+                      viewBox="0 0 16 16"
+                      class="bi bi-sun-fill opacity-50 me-2"
+                    >
+                      <path
+                        d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8M8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0m0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13m8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5M3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8m10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0m-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707M4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"
+                      ></path></svg
+                    >Light</a
+                  ><a
+                    class="dropdown-item d-flex align-items-center"
+                    href="#"
+                    data-bs-theme-value="dark"
+                    ><svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="1em"
+                      height="1em"
+                      fill="currentColor"
+                      viewBox="0 0 16 16"
+                      class="bi bi-moon-stars-fill opacity-50 me-2"
+                    >
+                      <path
+                        d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278"
+                      ></path>
+                      <path
+                        d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"
+                      ></path></svg
+                    >Dark</a
+                  ><a
+                    class="dropdown-item d-flex align-items-center"
+                    href="#"
+                    data-bs-theme-value="auto"
+                    ><svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="1em"
+                      height="1em"
+                      fill="currentColor"
+                      viewBox="0 0 16 16"
+                      class="bi bi-circle-half opacity-50 me-2"
+                    >
+                      <path
+                        d="M8 15A7 7 0 1 0 8 1zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16"
+                      ></path></svg
+                    >Auto</a
+                  >
+                </div>
+              </div>
+              <h1 class="display-4 fw-bold mb-5" data-aos="zoom-in">
+                Digitale Designs für&nbsp;<span class="underline">reale</span
+                >&nbsp;Visionen.
+              </h1>
+              <p class="fs-5 text-start text-muted mb-5" data-aos="zoom-in-up">
+                Gemeinsam kreieren wir maßgeschneiderte Web- und
+                Softwarelösungen, die Ihre Ideen in die digitale Welt bringen –
+                funktional, ästhetisch und zukunftsorientiert.
+              </p>
+            </div>
+          </div>
+          <div class="col-12 col-lg-10 mx-auto">
+            <div class="text-center position-relative">
+              <img
+                class="img-fluid"
+                data-aos="zoom-in-up"
+                src="assets/img/illustrations/office-ketam.svg"
+                style="width: 800px"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <section>
+      <div class="container py-4 py-xl-5">
+        <div class="row gy-4 row-cols-1 row-cols-md-2 row-cols-lg-3">
+          <div class="col" data-aos="zoom-in-up">
+            <div
+              class="card border-light border-1 d-flex justify-content-center p-4"
+            >
+              <div class="card-body">
+                <div
+                  class="bs-icon-lg bs-icon-rounded bs-icon-secondary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block mb-4 bs-icon"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="1em"
+                    height="1em"
+                    viewBox="0 0 24 24"
+                    stroke-width="2"
+                    stroke="currentColor"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="icon icon-tabler icon-tabler-fingerprint-scan"
+                  >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M9 11a3 3 0 0 1 6 0c0 1.657 .612 3.082 1 4"></path>
+                    <path d="M12 11v1.75c-.001 1.11 .661 2.206 1 3.25"></path>
+                    <path d="M9 14.25c.068 .58 .358 1.186 .5 1.75"></path>
+                    <path d="M4 8v-2a2 2 0 0 1 2 -2h2"></path>
+                    <path d="M4 16v2a2 2 0 0 0 2 2h2"></path>
+                    <path d="M16 4h2a2 2 0 0 1 2 2v2"></path>
+                    <path d="M16 20h2a2 2 0 0 0 2 -2v-2"></path>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="fw-bold">Maßgeschneiderte Lösungen</h4>
+                  <p class="text-muted">
+                    Individuelle Entwicklung, die genau auf Ihre Anforderungen
+                    zugeschnitten ist. Von der Idee bis zur Umsetzung – alles
+                    aus einer Hand.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col" data-aos="zoom-in-up">
+            <div
+              class="card border-light border-1 d-flex justify-content-center p-4"
+            >
+              <div class="card-body">
+                <div
+                  class="bs-icon-lg bs-icon-rounded bs-icon-secondary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block mb-4 bs-icon"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="1em"
+                    height="1em"
+                    viewBox="0 0 24 24"
+                    stroke-width="2"
+                    stroke="currentColor"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="icon icon-tabler icon-tabler-text-recognition"
+                  >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M4 8v-2a2 2 0 0 1 2 -2h2"></path>
+                    <path d="M4 16v2a2 2 0 0 0 2 2h2"></path>
+                    <path d="M16 4h2a2 2 0 0 1 2 2v2"></path>
+                    <path d="M16 20h2a2 2 0 0 0 2 -2v-2"></path>
+                    <path d="M12 16v-7"></path>
+                    <path d="M9 9h6"></path>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="fw-bold">Modernste Technologien</h4>
+                  <p class="text-muted">
+                    Ich setze auf zukunftssichere Technologien und aktuelle
+                    Standards, um Projekte leistungsstark, sicher und skalierbar
+                    zu gestalten.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col" data-aos="zoom-in-up">
+            <div
+              class="card border-light border-1 d-flex justify-content-center p-4"
+            >
+              <div class="card-body">
+                <div
+                  class="bs-icon-lg bs-icon-rounded bs-icon-secondary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block mb-4 bs-icon"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="1em"
+                    height="1em"
+                    viewBox="0 0 24 24"
+                    stroke-width="2"
+                    stroke="currentColor"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="icon icon-tabler icon-tabler-user-scan"
+                  >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M10 9a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"></path>
+                    <path d="M4 8v-2a2 2 0 0 1 2 -2h2"></path>
+                    <path d="M4 16v2a2 2 0 0 0 2 2h2"></path>
+                    <path d="M16 4h2a2 2 0 0 1 2 2v2"></path>
+                    <path d="M16 20h2a2 2 0 0 0 2 -2v-2"></path>
+                    <path d="M8 16a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2"></path>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="fw-bold">Benutzerfreundliches Design</h4>
+                  <p class="text-muted">
+                    Funktionalität trifft auf Ästhetik: Ich entwickle intuitive
+                    und ansprechende Benutzeroberflächen, die das Nutzererlebnis
+                    verbessern.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="container py-4 py-xl-5">
+        <div class="row">
+          <div class="col-md-6">
+            <h3
+              class="display-6 fw-bold text-center pb-md-4"
+              data-aos="zoom-in"
+            >
+              Von der Idee zur fertigen&nbsp;<span class="underline"
+                >Lösung.</span
+              >
+            </h3>
+          </div>
+          <div class="col-md-6 pt-4">
+            <p class="text-muted mb-4" data-aos="zoom-in-up">
+              Ich begleite Ihr Projekt von der ersten Idee bis zur finalen
+              Umsetzung – Schritt für Schritt, transparent und
+              lösungsorientiert.
+            </p>
+          </div>
+        </div>
+        <div class="row gy-4 gy-md-0">
+          <div
+            class="col-md-6 d-flex d-sm-flex d-md-flex justify-content-center align-items-center justify-content-md-start align-items-md-center justify-content-xl-center"
+          >
+            <div>
+              <div class="row gy-2 row-cols-1 row-cols-sm-2">
+                <div
+                  class="col text-center text-md-start"
+                  data-aos="zoom-in-up"
+                >
+                  <div
+                    class="d-flex justify-content-center align-items-center justify-content-md-start"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="1em"
+                      height="1em"
+                      viewBox="0 0 24 24"
+                      stroke-width="2"
+                      stroke="currentColor"
+                      fill="none"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="icon icon-tabler icon-tabler-number-1-small fs-3 text-primary bg-secondary"
+                    >
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                      <path d="M10 10l2 -2v8"></path>
+                    </svg>
+                    <h5 class="fw-bold mb-0 ms-2">Analyse &amp; Betreuung</h5>
+                  </div>
+                  <p class="text-muted my-3">
+                    Wir besprechen Ihre Ziele und entwickeln ein passendes
+                    Konzept.
+                  </p>
+                </div>
+                <div
+                  class="col text-center text-md-start"
+                  data-aos="zoom-in-up"
+                >
+                  <div
+                    class="d-flex justify-content-center align-items-center justify-content-md-start"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="1em"
+                      height="1em"
+                      viewBox="0 0 24 24"
+                      stroke-width="2"
+                      stroke="currentColor"
+                      fill="none"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="icon icon-tabler icon-tabler-number-2-small fs-3 text-primary bg-secondary"
+                    >
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                      <path
+                        d="M10 8h3a1 1 0 0 1 1 1v2a1 1 0 0 1 -1 1h-2a1 1 0 0 0 -1 1v2a1 1 0 0 0 1 1h3"
+                      ></path>
+                    </svg>
+                    <h5 class="fw-bold mb-0 ms-2">Design &amp; Prototyping</h5>
+                  </div>
+                  <p class="text-muted my-3">
+                    Ich erstelle Entwürfe und Prototypen, die Ihre Erwartungen
+                    treffen.
+                  </p>
+                </div>
+                <div
+                  class="col text-center text-md-start"
+                  data-aos="zoom-in-up"
+                >
+                  <div
+                    class="d-flex justify-content-center align-items-center justify-content-md-start"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="1em"
+                      height="1em"
+                      viewBox="0 0 24 24"
+                      stroke-width="2"
+                      stroke="currentColor"
+                      fill="none"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="icon icon-tabler icon-tabler-number-3-small fs-3 text-primary bg-secondary"
+                    >
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                      <path
+                        d="M10 8h2.5a1.5 1.5 0 0 1 1.5 1.5v1a1.5 1.5 0 0 1 -1.5 1.5h-1.5h1.5a1.5 1.5 0 0 1 1.5 1.5v1a1.5 1.5 0 0 1 -1.5 1.5h-2.5"
+                      ></path>
+                    </svg>
+                    <h5 class="fw-bold mb-0 ms-2">Entwicklung &amp; Testing</h5>
+                  </div>
+                  <p class="text-muted my-3">
+                    Ich setze das Design in sauberen Code um und teste es
+                    gründlich.
+                  </p>
+                </div>
+                <div
+                  class="col text-center text-md-start"
+                  data-aos="zoom-in-up"
+                >
+                  <div
+                    class="d-flex justify-content-center align-items-center justify-content-md-start"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="1em"
+                      height="1em"
+                      viewBox="0 0 24 24"
+                      stroke-width="2"
+                      stroke="currentColor"
+                      fill="none"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="icon icon-tabler icon-tabler-number-4-small fs-3 text-primary bg-secondary"
+                    >
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                      <path d="M10 8v3a1 1 0 0 0 1 1h3"></path>
+                      <path d="M14 8v8"></path>
+                    </svg>
+                    <h5 class="fw-bold mb-0 ms-2">Abnahme &amp; Support</h5>
+                  </div>
+                  <p class="text-muted my-3">
+                    Nach dem Launch kümmere ich mich um Updates und Wartung.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 order-first order-md-last">
+            <div>
+              <img
+                class="rounded img-fluid w-100 fit-cover"
+                data-aos="zoom-in-up"
+                style="min-height: 300px"
+                src="assets/img/illustrations/phone-ketam.svg"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="container py-4 py-xl-5">
+        <div class="row gy-4 gy-md-0">
+          <div
+            class="col-md-6 text-center text-md-start d-flex d-sm-flex d-md-flex justify-content-center align-items-center justify-content-md-start align-items-md-center justify-content-xl-center"
+          >
+            <div>
+              <img
+                class="rounded img-fluid fit-cover"
+                data-aos="zoom-in-up"
+                style="min-height: 300px"
+                src="assets/img/illustrations/statistics-ketam.svg"
+                width="800"
+              />
+            </div>
+          </div>
+          <div class="col">
+            <div style="max-width: 450px">
+              <h3 class="fw-bold text-center pb-md-4" data-aos="zoom-in">
+                <span class="underline">Zahlen</span>, die für sich sprechen.
+              </h3>
+              <p class="text-muted py-4 py-md-0" data-aos="zoom-in-up">
+                Echte Ergebnisse und Engagement für Ihre Projekte – Hier sind
+                einige Fakten, die meine Arbeitsweise unterstreichen.
+              </p>
+              <div class="row gy-4 row-cols-2 row-cols-md-2">
+                <div class="col" data-aos="zoom-in-up">
+                  <div class="text-center">
+                    <span class="fs-2 fw-bold text-primary bg-secondary"
+                      >100%</span
+                    >
+                    <p class="fw-normal text-muted">Kundenzufriedenheit</p>
+                  </div>
+                </div>
+                <div class="col" data-aos="zoom-in-up">
+                  <div class="text-center">
+                    <span class="fs-2 fw-bold text-primary bg-secondary"
+                      >6</span
+                    >
+                    <p class="fw-normal text-muted">Jahre Erfahrung</p>
+                  </div>
+                </div>
+                <div class="col" data-aos="zoom-in-up">
+                  <div class="text-center">
+                    <span class="fs-2 fw-bold text-primary bg-secondary"
+                      >5+</span
+                    >
+                    <p class="fw-normal text-muted">erfolgreiche Projekte</p>
+                  </div>
+                </div>
+                <div class="col" data-aos="zoom-in-up">
+                  <div class="text-center">
+                    <span class="fs-2 fw-bold text-primary bg-secondary"
+                      >24/7</span
+                    >
+                    <p class="fw-normal text-muted">Erreichbarkeit</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="py-4 py-xl-5">
+      <div class="container">
+        <div
+          class="bg-black border rounded border-0 border-primary overflow-hidden"
+        >
+          <div class="row g-0">
+            <div class="col-md-6 d-flex flex-column justify-content-center">
+              <div class="text-white p-4 p-md-5">
+                <h2 class="fw-bold mb-3" data-aos="zoom-in">
+                  Bereit, Ihre digitale Vision zum Leben zu erwecken?
+                </h2>
+                <p data-aos="zoom-in-up" class="mb-4">
+                  Dann lassen Sie uns über Ihr Projekt sprechen.
+                </p>
+                <div data-aos="zoom-in-up" class="my-3">
+                  <a
+                    class="btn btn-secondary me-2 mt-2"
+                    role="button"
+                    data-bss-hover-animate="pulse"
+                    href="contacts.html"
+                    >Jetzt anfragen</a
+                  ><a
+                    class="btn btn-light mt-2"
+                    role="button"
+                    data-bss-hover-animate="pulse"
+                    href="portfolio.html"
+                    >Portfolio ansehen</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div
+              class="col-md-6 order-first order-md-last"
+              style="min-height: 250px"
+            >
+              <img
+                data-aos="zoom-in-up"
+                class="w-100 h-100 fit-contain pt-5 pt-md-0"
+                src="assets/img/illustrations/creative-ketam.svg"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="py-5">
+      <div class="container py-4 py-xl-5">
+        <div class="row mb-5">
+          <div class="col-md-8 col-xl-6 text-center mx-auto">
+            <h2 class="display-6 fw-bold mb-4" data-aos="zoom-in">
+              Meine&nbsp;<span class="underline">Pläne</span>
+            </h2>
+            <p class="text-start text-muted" data-aos="zoom-in-up">
+              Wählen Sie das passende Paket für Ihr Projekt. Jedes Angebot ist
+              darauf ausgelegt, Ihre individuellen Bedürfnisse zu erfüllen.
+            </p>
+          </div>
+        </div>
+        <div class="row gy-4 row-cols-1 row-cols-md-2 row-cols-lg-3">
+          <div class="col" data-aos="zoom-in-up">
+            <div class="card border-0 h-100">
+              <div
+                class="card-body d-flex flex-column justify-content-between p-4"
+              >
+                <div>
+                  <h6 class="fw-bold text-muted">Basic</h6>
+                  <h4 class="display-5 fw-bold mb-4">ab 50€</h4>
+                  <p class="text-muted">
+                    Ideal für kleine Projekte &amp; schulische Aufgaben.
+                  </p>
+                  <ul class="list-unstyled">
+                    <li class="d-flex mb-2">
+                      <span class="bs-icon-xs bs-icon-rounded bs-icon me-2"
+                        ><svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="1em"
+                          height="1em"
+                          viewBox="0 0 24 24"
+                          stroke-width="2"
+                          stroke="currentColor"
+                          fill="none"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          class="icon icon-tabler icon-tabler-check fs-5 text-primary-emphasis"
+                        >
+                          <path
+                            stroke="none"
+                            d="M0 0h24v24H0z"
+                            fill="none"
+                          ></path>
+                          <path d="M5 12l5 5l10 -10"></path></svg></span
+                      ><span>Einfaches Webdesign</span>
+                    </li>
+                    <li class="d-flex mb-2">
+                      <span class="bs-icon-xs bs-icon-rounded bs-icon me-2"
+                        ><svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="1em"
+                          height="1em"
+                          viewBox="0 0 24 24"
+                          stroke-width="2"
+                          stroke="currentColor"
+                          fill="none"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          class="icon icon-tabler icon-tabler-check fs-5 text-primary-emphasis"
+                        >
+                          <path
+                            stroke="none"
+                            d="M0 0h24v24H0z"
+                            fill="none"
+                          ></path>
+                          <path d="M5 12l5 5l10 -10"></path></svg></span
+                      ><span>Basisfunktionen</span>
+                    </li>
+                    <li class="d-flex mb-2">
+                      <span class="bs-icon-xs bs-icon-rounded bs-icon me-2"
+                        ><svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="1em"
+                          height="1em"
+                          viewBox="0 0 24 24"
+                          stroke-width="2"
+                          stroke="currentColor"
+                          fill="none"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          class="icon icon-tabler icon-tabler-check fs-5 text-primary-emphasis"
+                        >
+                          <path
+                            stroke="none"
+                            d="M0 0h24v24H0z"
+                            fill="none"
+                          ></path>
+                          <path d="M5 12l5 5l10 -10"></path></svg></span
+                      ><span>1 Monat Support</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col" data-aos="zoom-in-up">
+            <div class="card border-secondary border-2 h-100">
+              <div
+                class="card-body d-flex flex-column justify-content-between p-4"
+              >
+                <span
+                  class="badge bg-secondary position-absolute top-0 end-0 rounded-bottom-left text-uppercase text-primary"
+                  >Beliebt</span
+                >
+                <div>
+                  <h6 class="fw-bold text-muted">Standard</h6>
+                  <h4 class="display-5 fw-bold mb-4">ab 299€</h4>
+                  <p class="text-muted">Perfekt für mittelgroße Projekte.</p>
+                  <ul class="list-unstyled">
+                    <li class="d-flex mb-2">
+                      <span class="bs-icon-xs bs-icon-rounded bs-icon me-2"
+                        ><svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="1em"
+                          height="1em"
+                          viewBox="0 0 24 24"
+                          stroke-width="2"
+                          stroke="currentColor"
+                          fill="none"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          class="icon icon-tabler icon-tabler-check fs-5 text-primary-emphasis"
+                        >
+                          <path
+                            stroke="none"
+                            d="M0 0h24v24H0z"
+                            fill="none"
+                          ></path>
+                          <path d="M5 12l5 5l10 -10"></path></svg></span
+                      ><span>Individuelles Design</span>
+                    </li>
+                    <li class="d-flex mb-2">
+                      <span class="bs-icon-xs bs-icon-rounded bs-icon me-2"
+                        ><svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="1em"
+                          height="1em"
+                          viewBox="0 0 24 24"
+                          stroke-width="2"
+                          stroke="currentColor"
+                          fill="none"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          class="icon icon-tabler icon-tabler-check fs-5 text-primary-emphasis"
+                        >
+                          <path
+                            stroke="none"
+                            d="M0 0h24v24H0z"
+                            fill="none"
+                          ></path>
+                          <path d="M5 12l5 5l10 -10"></path></svg></span
+                      ><span>Erweiterte Funktionen</span>
+                    </li>
+                    <li class="d-flex mb-2">
+                      <span class="bs-icon-xs bs-icon-rounded bs-icon me-2"
+                        ><svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="1em"
+                          height="1em"
+                          viewBox="0 0 24 24"
+                          stroke-width="2"
+                          stroke="currentColor"
+                          fill="none"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          class="icon icon-tabler icon-tabler-check fs-5 text-primary-emphasis"
+                        >
+                          <path
+                            stroke="none"
+                            d="M0 0h24v24H0z"
+                            fill="none"
+                          ></path>
+                          <path d="M5 12l5 5l10 -10"></path></svg></span
+                      ><span>3 Monate Support</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col" data-aos="zoom-in-up">
+            <div class="card border-0 h-100">
+              <div
+                class="card-body d-flex flex-column justify-content-between p-4"
+              >
+                <div class="pb-4">
+                  <h6 class="fw-bold text-muted">Pro</h6>
+                  <h4 class="display-5 fw-bold mb-4">Individuell</h4>
+                  <p class="text-muted">
+                    Optimal für komplexere Anforderungen.
+                  </p>
+                  <ul class="list-unstyled">
+                    <li class="d-flex mb-2">
+                      <span class="bs-icon-xs bs-icon-rounded bs-icon me-2"
+                        ><svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="1em"
+                          height="1em"
+                          viewBox="0 0 24 24"
+                          stroke-width="2"
+                          stroke="currentColor"
+                          fill="none"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          class="icon icon-tabler icon-tabler-check fs-5 text-primary-emphasis"
+                        >
+                          <path
+                            stroke="none"
+                            d="M0 0h24v24H0z"
+                            fill="none"
+                          ></path>
+                          <path d="M5 12l5 5l10 -10"></path></svg></span
+                      ><span>Maßgeschneiderte Softwareentwicklung</span>
+                    </li>
+                    <li class="d-flex mb-2">
+                      <span class="bs-icon-xs bs-icon-rounded bs-icon me-2"
+                        ><svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="1em"
+                          height="1em"
+                          viewBox="0 0 24 24"
+                          stroke-width="2"
+                          stroke="currentColor"
+                          fill="none"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          class="icon icon-tabler icon-tabler-check fs-5 text-primary-emphasis"
+                        >
+                          <path
+                            stroke="none"
+                            d="M0 0h24v24H0z"
+                            fill="none"
+                          ></path>
+                          <path d="M5 12l5 5l10 -10"></path></svg></span
+                      ><span>Umfassender Support</span>
+                    </li>
+                    <li class="d-flex mb-2">
+                      <span class="bs-icon-xs bs-icon-rounded bs-icon me-2"
+                        ><svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="1em"
+                          height="1em"
+                          viewBox="0 0 24 24"
+                          stroke-width="2"
+                          stroke="currentColor"
+                          fill="none"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          class="icon icon-tabler icon-tabler-check fs-5 text-primary-emphasis"
+                        >
+                          <path
+                            stroke="none"
+                            d="M0 0h24v24H0z"
+                            fill="none"
+                          ></path>
+                          <path d="M5 12l5 5l10 -10"></path></svg></span
+                      ><span>Regelmäßige Updates</span>
+                    </li>
+                    <li class="d-flex mb-2">
+                      <span class="bs-icon-xs bs-icon-rounded bs-icon me-2"
+                        ><svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="1em"
+                          height="1em"
+                          viewBox="0 0 24 24"
+                          stroke-width="2"
+                          stroke="currentColor"
+                          fill="none"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          class="icon icon-tabler icon-tabler-check fs-5 text-primary-emphasis"
+                        >
+                          <path
+                            stroke="none"
+                            d="M0 0h24v24H0z"
+                            fill="none"
+                          ></path>
+                          <path d="M5 12l5 5l10 -10"></path></svg></span
+                      ><span>Integration von Drittanbieterdiensten</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="py-4 py-xl-5 mb-5">
+      <div class="container">
+        <div class="row mb-2">
+          <div class="col-md-8 col-xl-6 text-center mx-auto">
+            <h2 class="display-6 fw-bold mb-5">
+              <span data-aos="zoom-in" class="pb-3 underline">FAQ<br /></span>
+            </h2>
+            <p class="text-start text-muted mb-5" data-aos="zoom-in-up">
+              Hier finden Sie Antworten auf häufig gestellte Fragen zu meinen
+              Dienstleistungen und Arbeitsabläufen. Sollten Sie weitere Fragen
+              haben, zögern Sie nicht, mich zu kontaktieren!
+            </p>
+          </div>
+        </div>
+        <div class="row mb-2">
+          <div class="col-md-8 mx-auto" data-aos="zoom-in-up">
+            <div class="accordion text-muted" role="tablist" id="accordion-1">
+              <div class="accordion-item">
+                <h2 class="accordion-header" role="tab">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#accordion-1 .item-1"
+                    aria-expanded="false"
+                    aria-controls="accordion-1 .item-1"
+                  >
+                    Wie lange dauert die Umsetzung eines Projekts?
+                  </button>
+                </h2>
+                <div
+                  class="accordion-collapse collapse item-1"
+                  role="tabpanel"
+                  data-bs-parent="#accordion-1"
+                >
+                  <div class="accordion-body">
+                    <p>
+                      Die Dauer hängt vom Umfang und der Komplexität des
+                      Projekts ab. In der Regel kann ich jedoch erste Ergebnisse
+                      innerhalb von 2-4 Wochen präsentieren.
+                    </p>
+                    <p class="mb-0"></p>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" role="tab">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#accordion-1 .item-2"
+                    aria-expanded="false"
+                    aria-controls="accordion-1 .item-2"
+                  >
+                    Bieten Sie Unterstützung nach dem Projektabschluss an?
+                  </button>
+                </h2>
+                <div
+                  class="accordion-collapse collapse item-2"
+                  role="tabpanel"
+                  data-bs-parent="#accordion-1"
+                >
+                  <div class="accordion-body">
+                    <p class="mb-0">
+                      Ja, ich biete umfassenden Support und Wartung an,
+                      insbesondere für das Pro-Paket.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" role="tab">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#accordion-1 .item-3"
+                    aria-expanded="false"
+                    aria-controls="accordion-1 .item-3"
+                  >
+                    Welche Zahlungsmethoden akzeptieren Sie?
+                  </button>
+                </h2>
+                <div
+                  class="accordion-collapse collapse item-3"
+                  role="tabpanel"
+                  data-bs-parent="#accordion-1"
+                >
+                  <div class="accordion-body">
+                    <p class="mb-0">
+                      Ich akzeptiere gängige Zahlungsmethoden wie Überweisung,
+                      PayPal und Kreditkarte.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" role="tab">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#accordion-1 .item-4"
+                    aria-expanded="false"
+                    aria-controls="accordion-1 .item-4"
+                  >
+                    Können Sie auch bestehende Websites optimieren?
+                  </button>
+                </h2>
+                <div
+                  class="accordion-collapse collapse item-4"
+                  role="tabpanel"
+                  data-bs-parent="#accordion-1"
+                >
+                  <div class="accordion-body">
+                    <p class="mb-0">
+                      Ja, ich kann bestehende Websites optimieren, um die
+                      Leistung und Benutzererfahrung zu verbessern.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" role="tab">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#accordion-1 .item-5"
+                    aria-expanded="false"
+                    aria-controls="accordion-1 .item-5"
+                  >
+                    Was ist, wenn ich mit dem Ergebnis nicht zufrieden bin?
+                  </button>
+                </h2>
+                <div
+                  class="accordion-collapse collapse item-5"
+                  role="tabpanel"
+                  data-bs-parent="#accordion-1"
+                >
+                  <div class="accordion-body">
+                    <p class="mb-0">
+                      Ich arbeite eng mit meinen Kunden zusammen und garantiere
+                      eine Überarbeitung, bis das Ergebnis Ihren Erwartungen
+                      entspricht.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="py-4 py-xl-5">
+      <div class="container">
+        <div
+          class="text-white bg-black border rounded border-0 border-primary d-flex flex-column justify-content-between flex-lg-row p-4 p-md-5"
+        >
+          <div class="pb-2 pb-lg-1">
+            <h2 class="fw-bold text-secondary mb-2" data-aos="zoom-in">
+              Es sind Fragen offen geblieben?
+            </h2>
+            <p data-aos="zoom-in-up" class="mb-0">
+              Ich stehe Ihnen gerne zur Verfügung! Zögern Sie nicht, mich zu
+              kontaktieren.
+            </p>
+          </div>
+          <div class="my-2">
+            <a
+              class="btn btn-light fs-5 py-2 px-4"
+              role="button"
+              data-bss-hover-animate="pulse"
+              href="contacts.html"
+              >Jetzt kontaktieren</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="container py-4 py-lg-5">
+        <div class="row row-cols-2 row-cols-md-4">
+          <div class="col-12 col-md-3 col-xxl-4">
+            <div class="fw-bold d-flex align-items-center mb-2">
+              <span>Kevin Tamme</span>
+            </div>
+            <p class="text-muted">Digitale Designs für reale Visionen.</p>
+          </div>
+        </div>
+        <hr />
+        <div
+          class="text-muted d-flex justify-content-between align-items-center pt-3"
+        >
+          <p class="mb-0">Copyright © 2024 Kevin Tamme</p>
+          <p class="mb-0">
+            <a href="impressum.html" target="_blank">Impressum</a>
+          </p>
+          <ul class="list-inline mb-0">
+            <li class="list-inline-item">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="1em"
+                height="1em"
+                fill="currentColor"
+                viewBox="0 0 16 16"
+                class="bi bi-linkedin"
+              >
+                <path
+                  d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401m-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4"
+                ></path>
+              </svg>
+            </li>
+            <li class="list-inline-item">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="1em"
+                height="1em"
+                fill="currentColor"
+                viewBox="0 0 16 16"
+                class="bi bi-github"
+              >
+                <path
+                  d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8"
+                ></path>
+              </svg>
+            </li>
+            <li class="list-inline-item">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="1em"
+                height="1em"
+                fill="currentColor"
+                viewBox="0 0 16 16"
+                class="bi bi-instagram"
+              >
+                <path
+                  d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"
+                ></path>
+              </svg>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/aos.min.js"></script>
+    <script src="assets/js/bs-init.js"></script>
+    <script src="assets/js/startup-modern.js"></script>
+  </body>
+</html>
