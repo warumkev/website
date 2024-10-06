@@ -15,7 +15,7 @@ Dieses Repository enthält den Code für mein persönliches Portfolio. Die Websi
 - **JavaScript** für interaktive Elemente
 - **PHP** für serverseitige Logik (z.B. Kontaktformular)
 
-## **Installation**  
+## **Struktur**  
 ```bash
 ├── /assets     # Bootstrap-Assets etc.
 ├── /css        # Styling der Website
