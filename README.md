@@ -1,9 +1,36 @@
+# **Mein Website**
 
-# Project Title
+## **Überblick**  
+Dieses Repository enthält den Code für mein persönliches Portfolio. Die Website ist in reinem HTML, CSS, JavaScript und PHP entwickelt und stellt eine Auswahl meiner Webentwicklungs- und Softwareprojekte vor.
 
-This repository is used for my personal website. You can visit this website [here](https://kevintamme.com/).
+## **Features**  
+- Modernes und responsives Webdesign
+- Präsentation meiner besten Projekte
+- Einfaches Kontaktformular für Anfragen
+- Übersichtliche Preismodelle und FAQs
 
-## Authors
+## **Technologien**  
+- **HTML5** für die Struktur
+- **CSS3** für das Styling
+- **JavaScript** für interaktive Elemente
+- **PHP** für serverseitige Logik (z.B. Kontaktformular)
 
-- [@warumkev](https://www.github.com/warumkev)
+## **Installation**  
+```bash
+├── /assets     # Bootstrap-Assets etc.
+├── /css        # Styling der Website
+├── /js         # JavaScript
+├── /img        # Grafiken, Illustrationen etc.
+├── index.html
+├── portfolio.html
+├── contacts.html
+├── 404.html
+├── README.md
+└── LICENSE
+```
 
+## Kontakt
+Wenn Sie Fragen haben oder ein Projekt besprechen möchten, können Sie mich gerne kontaktieren:
+
+E-Mail: [me@kevintamme.com]
+Website: [kevintamme.com]
